@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 const TrabajosPage = (props) => {
     return(
-        <Container id="trabajos">
+        <Container id="trabajos" as="main">
             <h1>Trabajos</h1>
         </Container>
     );

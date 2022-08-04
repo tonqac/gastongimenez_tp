@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,500&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,500&display=swap';
 
 *{
     margin: 0;
@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     background: #1D2434;
     color: #fff;
 }
@@ -21,6 +21,11 @@ a{
 
 p{
     margin: 1em 0;
+}
+
+ul, li{
+    list-style: none;
+    padding: 0;
 }
 
 img{
@@ -34,4 +39,51 @@ h1{
     font-weight: 800;
     margin: 1em 0 0.1em;
     text-align: center;
+}
+
+h1::after{
+    background: #fff;
+    width: 2em;
+    height: 0.1em;
+    border-radius: 1em;
+    display: block;
+    margin: 0.5em auto;
+    content: '';
+}
+
+.max-container{
+    max-width: 30em;
+    margin: 2em auto;
+}
+
+.SocialNav{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 2em 0 1em;
+}
+
+.SocialNav a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    margin: 0.2em;
+    font-size: 1.2em;
+    border-radius: 0.3em;
+    min-width: 3em;
+}
+
+.SocialNav a:hover{
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+@media screen and (min-width: 480px){
+    body{
+        font-size: 14px;
+    }
 }

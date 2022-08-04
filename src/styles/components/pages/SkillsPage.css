@@ -1,2 +1,25 @@
-#skills{
+#skills li{
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 600;
 }
+
+#skills li span{
+    color: var(--bs-link-color);
+    font-size: 2em;
+    margin-left: auto;
+    display: inline-block;
+}
+
+#skills li span::after{
+    opacity: 0.7;
+    color: #444;
+}
+
+#skills li.s1 span::before{content: '•'}
+#skills li.s2 span::before{content: '••'}
+#skills li.s3 span::before{content: '•••'}
+
+#skills li.s1 span::after{content: '••'}
+#skills li.s2 span::after{content: '•'}

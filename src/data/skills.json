@@ -1,0 +1,42 @@
+[
+    {
+        "nombre": "HTML/CSS", 
+        "puntos": 3
+    },{
+        "nombre": "Bootstrap", 
+        "puntos": 3
+    },{
+        "nombre": "JavaScript", 
+        "puntos": 3
+    },{
+        "nombre": "jQuery", 
+        "puntos": 3
+    },{
+        "nombre": "Angular", 
+        "puntos": 1
+    },{
+        "nombre": "React", 
+        "puntos": 2
+    },{
+        "nombre": "Node", 
+        "puntos": 2
+    },{
+        "nombre": "PHP", 
+        "puntos": 3
+    },{
+        "nombre": "CodeIgniter", 
+        "puntos": 2
+    },{
+        "nombre": "MySQL", 
+        "puntos": 3
+    },{
+        "nombre": "Oracle", 
+        "puntos": 1
+    },{
+        "nombre": "MongoDB", 
+        "puntos": 2
+    },{
+        "nombre": "AWS", 
+        "puntos": 1
+    }
+]

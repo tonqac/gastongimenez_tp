@@ -3,10 +3,10 @@ import Logo from './Logo';
 
 import { NavLink } from "react-router-dom";
 
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import {Container,Navbar,Nav} from 'react-bootstrap';
 
-const Header = (props) => {
+const Header = ({routes}) => {
+
     return(
         <header>
             <Navbar bg="dark" variant="dark">
@@ -15,13 +15,13 @@ const Header = (props) => {
                         <Logo width="40" height="40" />
                     </Navbar.Brand>
 
-                    <ul className="navbar-nav">
-                        <li className="nav-item"><NavLink className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} to="/">Inicio</NavLink></li>
-                        <li className="nav-item"><NavLink className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} to="/trabajos">Trabajos</NavLink></li>
-                        <li className="nav-item"><NavLink className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} to="/clientes">Clientes</NavLink></li>
-                        <li className="nav-item"><NavLink className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} to="/skills">Skills</NavLink></li>
-                        <li className="nav-item"><NavLink className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} to="/contacto">Contacto</NavLink></li>
-                    </ul>
+                    <Nav as="ul">
+                        {routes.map((route,key) => (
+                            <Nav.Item as="li" key={key}>
+                                <Nav.Link as={NavLink} className={({ isActive }) => (isActive ? "active" : "")} to={route.path}>{route.name}</Nav.Link>
+                            </Nav.Item>
+                        ))}
+                    </Nav>
                 </Container>
             </Navbar>
         </header>

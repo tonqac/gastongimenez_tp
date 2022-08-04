@@ -1,0 +1,115 @@
+[
+    {
+        "nombre": "Aerolíneas Argentinas",
+        "imagen": "aa.png"
+    },
+    {
+        "nombre": "Automovil Club Argentino",
+        "imagen": "aca.png"
+    },
+    {
+        "nombre": "Adlatina",
+        "imagen": "adlatina.png"
+    },
+    {
+        "nombre": "Axialent",
+        "imagen": "axialent.png"
+    },
+    {
+        "nombre": "Banco Galicia",
+        "imagen": "galicia.png"
+    },
+    {
+        "nombre": "Buenos Aires Ciudad",
+        "imagen": "ba.png"
+    },
+    {
+        "nombre": "BMW",
+        "imagen": "bmw.png"
+    },
+    {
+        "nombre": "Cinecolor Argentina",
+        "imagen": "cinecolor.png"
+    },
+    {
+        "nombre": "Design Suites",
+        "imagen": "design.png"
+    },
+    {
+        "nombre": "Effie Awards",
+        "imagen": "effie.png"
+    },
+    {
+        "nombre": "Estrella Damm",
+        "imagen": "damm.png"
+    },
+    
+    {
+        "nombre": "FIAP",
+        "imagen": "fiap.png"
+    },
+    {
+        "nombre": "Fundación Filba",
+        "imagen": "filba.png"
+    },
+    {
+        "nombre": "FV",
+        "imagen": "fv.png"
+    },
+    {
+        "nombre": "Hospital Gutierrez",
+        "imagen": "gutierrez.png"
+    },
+    {
+        "nombre": "Krethaus",
+        "imagen": "krethaus.png"
+    },
+    {
+        "nombre": "LaRoche-Posay",
+        "imagen": "laroche.png"
+    },
+    {
+        "nombre": "L'bel",
+        "imagen": "lbel.png"
+    },
+    {
+        "nombre": "Micheluzzi Calzados",
+        "imagen": "micheluzzi.png"
+    },
+    {
+        "nombre": "MotoGP",
+        "imagen": "motogp.png"
+    },
+    {
+        "nombre": "Museo del Holocausto",
+        "imagen": "holocausto.png"
+    },
+    {
+        "nombre": "T&E",
+        "imagen": "tye.png"
+    },
+    {
+        "nombre": "Universidad de Belgrano",
+        "imagen": "ub.png"
+    },
+    {
+        "nombre": "Universidad Nacional de las Artes",
+        "imagen": "una.png"
+    },
+    {
+        "nombre": "Universidad Maimónides",
+        "imagen": "umai.png"
+    },
+    {
+        "nombre": "Vichy",
+        "imagen": "vichy.png"
+    },
+    {
+        "nombre": "Villa del Sur",
+        "imagen": "villadelsur.png"
+    },
+    {
+        "nombre": "Volkswagen",
+        "imagen": "vw.png"
+    }
+]

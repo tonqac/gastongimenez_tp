@@ -28,6 +28,10 @@
     transform: translate(-50%,-50%);
 }
 
+#index h1::after{
+    display: none;
+}
+
 #index h2{
     font-size: 1.9em;
     font-weight: 600;
@@ -40,31 +44,6 @@
     line-height: 1.4em;
     max-width: 33em;
     margin: 1em auto;
-}
-
-#index ul{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 2em 0 1em;
-}
-
-#index ul a{
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 0.5em;
-    margin: 0.2m;
-    font-size: 1.2em;
-    border-radius: 0.3em;
-    min-width: 3em;
-}
-
-#index ul a:hover{
-    background-color: rgba(255,255,255,0.2);
-    color: #fff;
 }
 
 #index .btn i{

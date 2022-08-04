@@ -10,22 +10,27 @@ import ContactoPage from "./pages/ContactoPage";
 
 import './App.css';
 
+const routes = [
+    { path: '/', name: 'Home', component: IndexPage },
+    { path: '/trabajos', name: 'Trabajos', component: TrabajosPage },
+    { path: '/clientes', name: 'Clientes', component: ClientesPage },
+    { path: '/skills', name: 'Skills', component: SkillsPage },
+    { path: '/contacto', name: 'Contacto', component: ContactoPage },
+];
 
 function App() {
-  return (
-    <>
-        <BrowserRouter>
-            <Header/>
-            <Routes>
-                <Route path="/" element={<IndexPage />} />
-                <Route path="/trabajos" element={<TrabajosPage />} />
-                <Route path="/clientes" element={<ClientesPage />} />
-                <Route path="/skills" element={<SkillsPage />} />
-                <Route path="/contacto" element={<ContactoPage />} />
-            </Routes>
-        </BrowserRouter>
-    </>
-  );
+    return (
+        <>
+            <BrowserRouter>
+                <Header routes={routes} />
+                <Routes>
+                    {routes.map((route,key) => (
+                        <Route key={key} path={route.path} element={<route.component />} />
+                    ))}
+                </Routes>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;

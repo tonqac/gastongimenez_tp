@@ -3,5 +3,9 @@
 $primary: #C25C1A;
 $dark: #10141D;
 
+button{
+    --bs-btn-color: #fff !important;
+}
+
 // Import bootstrap
 @import 'bootstrap/scss/bootstrap.scss';
