@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <h1>Listado de trabajos</h1>
+    </div>
+    <div class="row">
+        <div class="text-end">
+            <a href="/admin/trabajos/agregar" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="5%" scope="row">#</th>
+                <th width="60%" scope="row">Título</th>
+                <th width="10%" scope="row" class="text-center">Año</th>
+                <th width="10%" scope="row" class="text-center">Destacado</th>
+                <th width="15%" class="text-end"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each objs}}
+                <tr>
+                    <th>{{id}}</th>
+                    <td>{{titulo}}</td>
+                    <td class="text-center">{{anio}}</td>
+                    {{#if destacado}}
+                        <td class="text-center"><strong class="text-success">SI</strong></td>
+                    {{else}}
+                        <td class="text-center">NO</td>
+                    {{/if}}
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <a class="btn btn-warning me-1" href="/admin/trabajos/modificar/{{id}}"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-danger eliminar" href="/admin/trabajos/eliminar/{{id}}"><i class="fa fa-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

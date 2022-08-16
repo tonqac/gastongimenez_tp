@@ -1,0 +1,77 @@
+<h1 class="mb-4">Modificar trabajo</h1>
+
+{{#if error}}
+    <div class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
+{{/if}}
+
+<form action="#" method="post">
+    <p class="col-6">
+        <label class="form-label col-10">
+            <input type="text" name="titulo" value="{{obj.titulo}}" class="form-control" placeholder="Título" required>
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-12">
+            <input type="text" name="subtitulo" value="{{obj.subtitulo}}" class="form-control" placeholder="Subtítulo" required>
+        </label>
+    </p>
+    <p class="col-2">
+        <label class="form-label col-12">
+            <input type="number" name="anio" value="{{obj.anio}}" class="form-control" placeholder="Año" required>
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-12">
+            <input type="text" name="tecnologia" value="{{obj.tecnologia}}" class="form-control" placeholder="Tecnología" required>
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-8">
+            <input type="text" name="estudio" value="{{obj.estudio}}" class="form-control" placeholder="Estudio / Cargo">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-8">
+            <input type="text" name="url" value="{{obj.url}}" class="form-control" placeholder="URL">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-6">
+            Imagen principal
+
+            {{#if obj.imagen_principal}}
+                <br><img src="{{obj.imagen_principal}}" width="100" class="my-2">
+            {{/if}}
+
+            <input type="file" name="nue_imagen_principal" value="" class="form-control">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-6">
+            Imagen de trabajo
+
+            {{#if obj.imagen_trabajo}}
+                <br><img src="{{obj.imagen_trabajo}}" width="100" class="my-2">
+            {{/if}}
+
+            <input type="file" name="nue_imagen_trabajo" value="" class="form-control">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-12">
+            <textarea name="descripcion" class="form-control" placeholder="Descripcion" required>{{obj.descripcion}}</textarea>
+        </label>
+    </p>
+    <div class="form-check form-switch my-4">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchDestacado" name="destacado" value="1" {{checkedDestacado}}>
+        <label class="form-check-label" for="switchDestacado">¿Destacar trabajo?</label>
+    </div>
+    <p>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <input type="hidden" name="id" value="{{obj.id}}">
+
+        <a href="/admin/trabajos" class="btn btn-secondary ml-4">Cancelar</a>
+    </p>
+</form>

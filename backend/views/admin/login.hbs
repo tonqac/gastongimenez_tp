@@ -1,0 +1,23 @@
+<h1 class="mb-4">Iniciar sesión</h1>
+
+{{#if error}}
+    <div class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
+{{/if}}
+
+<form action="/admin/login" method="post">
+    <p>
+        <label class="form-label">
+            <input type="email" name="email" class="form-control" placeholder="Email" required>
+        </label>
+    </p>
+    <p>
+        <label class="form-label">
+            <input type="password" name="clave" class="form-control" placeholder="Contraseña" required>
+        </label>
+    </p>
+    <p>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </p>
+</form>

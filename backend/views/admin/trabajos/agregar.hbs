@@ -1,0 +1,65 @@
+<h1 class="mb-4">Agregar trabajo</h1>
+
+{{#if error}}
+    <div class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
+{{/if}}
+
+<form action="#" method="post">
+    <p class="col-6">
+        <label class="form-label col-10">
+            <input type="text" name="titulo" class="form-control" placeholder="Título" required>
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-12">
+            <input type="text" name="subtitulo" class="form-control" placeholder="Subtítulo" required>
+        </label>
+    </p>
+    <p class="col-2">
+        <label class="form-label col-12">
+            <input type="number" name="anio" class="form-control" placeholder="Año" required>
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-12">
+            <input type="text" name="tecnologia" class="form-control" placeholder="Tecnología" required>
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-8">
+            <input type="text" name="estudio" class="form-control" placeholder="Estudio / Cargo">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-8">
+            <input type="text" name="url" class="form-control" placeholder="URL">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-6">
+            Imagen principal
+            <input type="file" name="imagen_principal" class="form-control">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-6">
+            Imagen de trabajo
+            <input type="file" name="imagen_trabajo" class="form-control">
+        </label>
+    </p>
+    <p class="col-6">
+        <label class="form-label col-12">
+            <textarea name="descripcion" class="form-control" placeholder="Descripcion" required></textarea>
+        </label>
+    </p>
+    <div class="form-check form-switch my-4">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchDestacado">
+        <label class="form-check-label" for="switchDestacado" name="destacado" value="1">¿Destacar trabajo?</label>
+    </div>
+    <p>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="/admin/trabajos" class="btn btn-secondary ml-4">Cancelar</a>
+    </p>
+</form>
