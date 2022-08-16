@@ -1,20 +1,23 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../styles/components/pages/ContactoPage.css';
 import Container from 'react-bootstrap/Container';
+import {Form,Button} from 'react-bootstrap';
+
+import ReCAPTCHA from "react-google-recaptcha";
 
 import SocialNav from '../components/SocialNav';
-
-import {Form,Button} from 'react-bootstrap';
 
 const ContactoPage = (props) => {
     const [validated, setValidated] = useState(false);
 
-    const handleSubmit = (event) => {
-        const form = event.currentTarget;
+    const captchaRef = useRef(null);
+
+    const handleSubmit = (e) => {
+        const form = e.currentTarget;
         if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+            e.preventDefault();
+            e.stopPropagation();
         }
 
         setValidated(true);
@@ -59,6 +62,14 @@ const ContactoPage = (props) => {
                         <Form.Control.Feedback type="invalid">
                             Por favor ingresá tu mensaje.
                         </Form.Control.Feedback>
+                    </Form.Group>
+
+                    <Form.Group className="mb-4">
+                        <ReCAPTCHA
+                            sitekey="6LcyEn8hAAAAAM8qBgp9oPW0iu8gdM-pXt4n_vQl"
+                            ref={captchaRef}
+                            theme='dark'
+                        />
                     </Form.Group>
 
                     <Button variant="primary text-white" type="submit">
