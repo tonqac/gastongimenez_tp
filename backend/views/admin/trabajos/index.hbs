@@ -12,7 +12,9 @@
         <thead>
             <tr>
                 <th width="5%" scope="row">#</th>
-                <th width="60%" scope="row">Título</th>
+                <th width="10%" scope="row">Imagen</th>
+                <th width="30%" scope="row">Título</th>
+                <th width="20%" scope="row">Subtítulo</th>
                 <th width="10%" scope="row" class="text-center">Año</th>
                 <th width="10%" scope="row" class="text-center">Destacado</th>
                 <th width="15%" class="text-end"></th>
@@ -22,7 +24,9 @@
             {{#each objs}}
                 <tr>
                     <th>{{id}}</th>
+                    <td><img src={{imagen_principal}} alt={titulo} height="50"></td>
                     <td>{{titulo}}</td>
+                    <td>{{subtitulo}}</td>
                     <td class="text-center">{{anio}}</td>
                     {{#if destacado}}
                         <td class="text-center"><strong class="text-success">SI</strong></td>

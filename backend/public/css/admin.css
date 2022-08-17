@@ -33,3 +33,7 @@ textarea{
     background-color: #555;
     border-color: #555;
 }
+
+.table, .table tr, .table td{
+    vertical-align: middle;
+}

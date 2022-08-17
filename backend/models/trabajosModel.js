@@ -1,9 +1,9 @@
-var pool = require('./database');
+const pool = require('./database');
 
-async function listar(){
+const listar = async () =>{
     try{
-        var sql = 'select * from trabajos order by orden, anio desc, id desc';
-        var rows = await pool.query(sql);
+        let sql = 'select * from trabajos order by orden, anio desc, id desc';
+        let rows = await pool.query(sql);
         return rows;
     }
     catch(error){
@@ -11,10 +11,10 @@ async function listar(){
     }
 }
 
-async function buscarPorId(id){
+const buscarPorId = async (id) =>{    
     try{
-        var sql = 'select * from trabajos where id = ?';
-        var rows = await pool.query(sql,[id]);
+        let sql = 'select * from trabajos where id = ?';
+        let rows = await pool.query(sql,[id]);
         return rows[0];
     }
     catch(error){
@@ -22,10 +22,10 @@ async function buscarPorId(id){
     }
 }
 
-async function insertar(obj){
+const insertar = async (obj) =>{
     try{
-        var sql = 'insert into trabajos set ?';
-        var rows = await pool.query(sql,[obj]);
+        let sql = 'insert into trabajos set ?';
+        let rows = await pool.query(sql,[obj]);
         return rows;
     }
     catch(error){
@@ -33,20 +33,20 @@ async function insertar(obj){
     }
 }
 
-async function modificar(obj,id){
+const modificar = async (obj,id) =>{
     try{
         // Input checkbox
         if(obj.destacado!='1') obj.destacado='0';
 
         // Input files
-        if(obj.nue_imagen_principal!='') obj.imagen_principal = obj.nue_imagen_principal;
+        if(obj.nue_imagen_principal) obj.imagen_principal = obj.nue_imagen_principal;
         delete obj.nue_imagen_principal;
 
-        if(obj.nue_imagen_trabajo!='') obj.imagen_trabajo = obj.nue_imagen_trabajo;
+        if(obj.nue_imagen_trabajo) obj.imagen_trabajo = obj.nue_imagen_trabajo;
         delete obj.nue_imagen_trabajo;
 
-        var sql = 'update trabajos set ? where id=?';
-        var rows = await pool.query(sql,[obj,id]);
+        let sql = 'update trabajos set ? where id=?';
+        let rows = await pool.query(sql,[obj,id]);
         return rows;
     }
     catch(error){
@@ -54,10 +54,10 @@ async function modificar(obj,id){
     }
 }
 
-async function eliminar(id){
+const eliminar = async (id) =>{
     try{
-        var sql = 'delete from trabajos where id = ?';
-        var rows = await pool.query(sql,[id]);
+        let sql = 'delete from trabajos where id = ?';
+        let rows = await pool.query(sql,[id]);
         return rows;
     }
     catch(error){
