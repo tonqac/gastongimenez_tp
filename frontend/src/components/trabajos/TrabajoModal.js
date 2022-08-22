@@ -17,8 +17,8 @@ const TrabajoModal = (props) =>{
             setTrabajo(response.data);
             setLoading(false);
         };
-
         cargarTrabajo();
+        // eslint-disable-next-line
     },[]);
 
     return(
@@ -28,7 +28,7 @@ const TrabajoModal = (props) =>{
                 (<p><img src='/assets/img/loading.svg' alt='Loading...'/></p>):
                 (
                     <Modal show={true} backdrop="static" keyboard={false} size="lg" scrollable={true}>
-                        <CloseButton onClick={props.onClose} />
+                        <CloseButton onClick={props.onCloseModal} />
 
                         <Modal.Body className='row'>
                             <div className='content-main col-md-6'>
@@ -37,7 +37,7 @@ const TrabajoModal = (props) =>{
                                 <hr/>
 
                                 <p>
-                                    {trabajo.anio}<br/>
+                                    Año {trabajo.anio}<br/>
                                     <strong>{trabajo.tecnologia}</strong><br/>
                                     {trabajo.estudio}<br/>
                                 </p>
@@ -47,12 +47,12 @@ const TrabajoModal = (props) =>{
 
                                 <hr/>
                                 <p>
-                                    <Button size="sm" variant="secondary" className='antTrabajo'><FontAwesomeIcon icon={faAngleLeft} /> Anterior</Button>
+                                    <Button size="sm" variant="secondary" onClick={()=>props.onLoadTrabajo(props.id,"anterior")}><FontAwesomeIcon icon={faAngleLeft} /> Anterior</Button>
                                     &nbsp;&nbsp;
-                                    <Button size="sm" variant="secondary" className='sigTrabajo'>Siguiente <FontAwesomeIcon icon={faAngleRight} /></Button>
+                                    <Button size="sm" variant="secondary" onClick={()=>props.onLoadTrabajo(props.id,"siguiente")}>Siguiente <FontAwesomeIcon icon={faAngleRight} /></Button>
                                 </p>
                             </div>
-                            <div className='col-md-6 p-0'>
+                            <div className='col-md-6 p-0 container-image'>
                                 <img src={trabajo.imagen_trabajo} alt={trabajo.titulo} className='img-fluid' />
                             </div>
                         </Modal.Body>

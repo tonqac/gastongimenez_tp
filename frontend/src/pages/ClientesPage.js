@@ -7,7 +7,7 @@ const Cliente = ({obj}) =>{
     return (
         <li className='col-6 col-md-4 col-lg-2'>
             <img src={'/assets/img/clientes/'+obj.imagen} alt={obj.nombre} title={obj.nombre} />
-            <h4 className='text-muted'>{obj.nombre}</h4>
+            <h4 className='text-light'>{obj.nombre}</h4>
         </li>
     );
 }

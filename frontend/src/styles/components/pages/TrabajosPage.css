@@ -26,8 +26,8 @@
 
 #trabajos .item img{
     width: 100%;
-    filter: grayscale(1);
     border-radius: 0.5em;
+    filter: grayscale(1);
     padding: 0.3em;
     border: 1px solid #aeaeae;
     opacity: 0.8;
@@ -35,14 +35,14 @@
 }
 
 #trabajos .item:hover img, #trabajos .item.destacado-1 img{
-    box-shadow: 0 0 1em rgba(255,255,255,0.5);
+    box-shadow: 0 0 1em rgba(0,0,0,0.5);
     filter: grayscale(0);
     opacity: 1;
     border-color: #fff
 }
 
 #trabajos .item:hover img{
-    box-shadow: 0 0 2em #fff;
+    box-shadow: 0 0 2em #000;
 }
 
 .modal-content{
@@ -81,3 +81,7 @@
     font-weight: 300;
 }
 
+.modal-body .container-image{
+    max-height: calc(98vh - var(--bs-modal-margin) * 2);
+    overflow-y: auto;
+}

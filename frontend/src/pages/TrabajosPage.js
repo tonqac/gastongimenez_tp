@@ -27,13 +27,27 @@ const TrabajosPage = (props) => {
     },[]);
     
     const openModal = (id)=>{
-        console.log("open " + id);
-        setModalContent([<TrabajoModal key={id} id={id} onClose={closeModal} />]);
+        setModalContent([<TrabajoModal key={id} id={id} onCloseModal={closeModal} onLoadTrabajo={loadTrabajo} />]);
     }
 
     const closeModal = ()=>{
-        console.log("close");
         setModalContent([]);
+    }
+
+    const loadTrabajo = (id,dir)=>{
+        let i = trabajos.findIndex(e=> e.id === id);
+
+        if(dir==="anterior"){
+            i--;
+            if(i<0) i = trabajos.length-1;
+        }
+        else{
+            i++;
+            if(i===trabajos.length) i = 0;
+        }
+        
+        closeModal();
+        openModal(trabajos[i].id);
     }
 
     return(
