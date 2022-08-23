@@ -13,7 +13,7 @@ const TrabajoModal = (props) =>{
     useEffect(()=>{
         const cargarTrabajo = async()=>{
             setLoading(true);
-            const response = await axios.get('http://localhost:3000/api/trabajos/'+props.id);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/trabajos/${props.id}`);
             setTrabajo(response.data);
             setLoading(false);
         };

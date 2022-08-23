@@ -18,7 +18,7 @@ const TrabajosPage = (props) => {
     useEffect(()=>{
         const cargarTrabajos = async()=>{
             setLoading(true);
-            const response = await axios.get('http://localhost:3000/api/trabajos');
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/trabajos`);
             setTrabajos(response.data);
             setLoading(false);
         };
