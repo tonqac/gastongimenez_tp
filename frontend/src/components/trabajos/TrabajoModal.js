@@ -32,27 +32,31 @@ const TrabajoModal = (props) =>{
 
                         <Modal.Body className='row'>
                             <div className='content-main col-md-6'>
-                                <h2>{trabajo.titulo}</h2>
-                                <h3>{trabajo.subtitulo}</h3>
-                                <hr/>
+                                <div className='modal-header'>
+                                    <h2>{trabajo.titulo}</h2>
+                                    <h3>{trabajo.subtitulo}</h3>
+                                </div>
+                                
+                                <div className='modal-body'>
+                                    <p>
+                                        Año {trabajo.anio}<br/>
+                                        <strong>{trabajo.tecnologia}</strong><br/>
+                                        {trabajo.estudio}<br/>
+                                    </p>
+                                    <div dangerouslySetInnerHTML={{__html:trabajo.descripcion}} />
 
-                                <p>
-                                    Año {trabajo.anio}<br/>
-                                    <strong>{trabajo.tecnologia}</strong><br/>
-                                    {trabajo.estudio}<br/>
-                                </p>
-                                <div dangerouslySetInnerHTML={{__html:trabajo.descripcion}} />
+                                    {trabajo.url? (<p><Button href={trabajo.url} target='_blank' rel='noreferrer' className='text-white'><FontAwesomeIcon icon={faExternalLink} /> Ver trabajo</Button></p>) : ('')}
+                                </div>
 
-                                {trabajo.url? (<p><Button href={trabajo.url} target='_blank' rel='noreferrer' className='text-white'><FontAwesomeIcon icon={faExternalLink} /> Ver trabajo</Button></p>) : ('')}
-
-                                <hr/>
-                                <p>
-                                    <Button size="sm" variant="secondary" onClick={()=>props.onLoadTrabajo(props.id,"anterior")}><FontAwesomeIcon icon={faAngleLeft} /> Anterior</Button>
-                                    &nbsp;&nbsp;
-                                    <Button size="sm" variant="secondary" onClick={()=>props.onLoadTrabajo(props.id,"siguiente")}>Siguiente <FontAwesomeIcon icon={faAngleRight} /></Button>
-                                </p>
+                                <div className='modal-footer'>
+                                    <p>
+                                        <Button size="sm" variant="secondary" onClick={()=>props.onLoadTrabajo(props.id,"anterior")}><FontAwesomeIcon icon={faAngleLeft} /> Anterior</Button>
+                                        &nbsp;&nbsp;
+                                        <Button size="sm" variant="secondary" onClick={()=>props.onLoadTrabajo(props.id,"siguiente")}>Siguiente <FontAwesomeIcon icon={faAngleRight} /></Button>
+                                    </p>
+                                </div>
                             </div>
-                            <div className='col-md-6 p-0 container-image'>
+                            <div className='col-md-6 p-0 container-image' style={{backgroundImage: "url(/assets/img/loading.svg"}}>
                                 <img src={trabajo.imagen_trabajo} alt={trabajo.titulo} className='img-fluid' />
                             </div>
                         </Modal.Body>

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const cloudinary = require('cloudinary');
+
+const cloudinary = require('cloudinary').v2;
+const nodemailer = require('nodemailer');
 
 const trabajosModel = require('../models/trabajosModel');
 
@@ -32,6 +34,34 @@ router.get('/trabajos/:id', async (req,res,next)=>{
         imagen_principal,
         imagen_trabajo
     });
+});
+
+router.post('/contacto', async(req,res,next)=>{
+    const mail = {
+        to: 'gimenezga@gmail.com',
+        subject: 'Contacto desde la Web',
+        html: ` Nombre: ${req.body.nombre} <br>
+                Email: ${req.body.email} <br>
+                Teléfono: ${req.body.telefono} <br>
+                Mensaje: ${req.body.mensaje} <br>`
+    }
+
+    const transport = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        auth:{
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        }
+    });
+
+    await transport.sendMail(mail);
+
+    res.status(201).json({
+        success: true,
+        message: '¡Gracias por enviar tus comentarios! En breve te estaré contactando :)'
+    });
+
 });
 
 module.exports = router;
