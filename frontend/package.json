@@ -1,6 +1,7 @@
 {
-  "name": "gastongimenez",
-  "version": "0.1.0",
+  "name": "Gaston Gimenez",
+  "description": "Frontend para Gastón Giménez Portfolio web",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -20,7 +21,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "http://react.gastongimenez.com",
   "scripts": {
     "start": "env-cmd -f .env react-scripts start",
     "build": "react-scripts build",
