@@ -30,6 +30,7 @@ router.get('/', async function(req, res, next) {
     res.render(theFolder,{
         layout: theLayout,
         usuario: req.session.usuario,
+        title: 'Listado de trabajos',
         objs
     });
 });
@@ -38,7 +39,8 @@ router.get('/', async function(req, res, next) {
 router.get('/agregar', function(req, res, next) {
     res.render(theFolder+'/agregar',{
         layout: theLayout,
-        usuario: req.session.usuario
+        usuario: req.session.usuario,
+        title: 'Agregar trabajo'
     });
 });
 
@@ -88,6 +90,7 @@ router.get('/modificar/:id', async function(req, res, next) {
     res.render(theFolder+'/modificar',{
         layout: theLayout,
         usuario: req.session.usuario,
+        title: 'Modificar trabajo',
         obj: {
             ...obj,
             imagen_principal,

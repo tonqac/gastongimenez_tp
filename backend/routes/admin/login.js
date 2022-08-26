@@ -5,7 +5,8 @@ const usuariosModel = require('../../models/usuariosModel');
 /* GET login page. */
 router.get('/', (req, res, next)=>{
     res.render('admin/login',{
-        layout: 'admin/layout' // Le digo que use la cabecera principal
+        layout: 'admin/layout', // Le digo que use la cabecera principal
+        title: 'Inicio de sesión'
     });
 });
 
